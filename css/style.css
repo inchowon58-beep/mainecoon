@@ -1032,6 +1032,10 @@ ul { list-style: none; }
   margin-top: 4px;
 }
 
+.regional-links-dropdown:not([open]) .regional-links-panel {
+  display: none;
+}
+
 .regional-links-panel {
   max-height: 280px;
   overflow-y: auto;

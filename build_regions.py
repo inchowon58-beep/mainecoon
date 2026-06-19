@@ -227,6 +227,25 @@ regions = [
 out_dir = os.path.join(os.path.dirname(__file__), "pages", "regions")
 os.makedirs(out_dir, exist_ok=True)
 
+ASSET_VERSION = "20260619b"
+
+REGIONAL_DROPDOWN_INLINE_CSS = """
+  <style>
+    .regional-links-dropdown{max-width:520px;margin:0 auto;border:1px solid #e0e0e0;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+    .regional-links-dropdown summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-size:1.15rem;font-weight:500;color:#1a1a1a;user-select:none}
+    .regional-links-dropdown summary::-webkit-details-marker{display:none}
+    .regional-links-dropdown summary::marker{content:''}
+    .regional-links-dropdown summary::after{content:'';flex-shrink:0;width:8px;height:8px;border-right:2px solid #c9a84c;border-bottom:2px solid #c9a84c;transform:rotate(45deg);margin-top:-4px}
+    .regional-links-dropdown[open] summary{color:#c9a84c;border-bottom:1px solid #eee}
+    .regional-links-dropdown[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+    .regional-links-dropdown:not([open]) .regional-links-panel{display:none}
+    .regional-links-panel{max-height:280px;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .regional-links-list a{display:block;padding:12px 22px;font-size:.88rem;font-weight:500;color:#888}
+    .regional-links-list a:hover{color:#c9a84c;background:rgba(201,168,76,.06)}
+    .regional-links-list li{border-bottom:1px solid #f0f0f0}
+    .regional-links-list li:last-child{border-bottom:none}
+  </style>"""
+
 template = """<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -242,7 +261,8 @@ template = """<!DOCTYPE html>
   <meta property="og:description" content="{area} {name} 지역 프리미엄 메인쿤분양 전문 상담">
   <meta property="og:image" content="https://www.cattery.co.kr/images/{hero}">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/style.css?v={asset_version}">
+{regional_dropdown_css}
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"LocalBusiness","name":"{keyword} - 메인쿤분양 전문 캐터리","description":"{area} {name} 지역 프리미엄 메인쿤분양","url":"https://www.cattery.co.kr/pages/regions/{slug}.html","telephone":"0505-464-1004","areaServed":"{area}","image":"https://www.cattery.co.kr/images/{hero}","priceRange":"$$$$"}}
   </script>
@@ -332,7 +352,7 @@ template = """<!DOCTYPE html>
     <a href="https://www.cattery.co.kr" target="_blank" rel="noopener"><span class="icon">&#127760;</span><span>캐터리 공식홈페이지</span><span class="en">www.cattery.co.kr</span></a>
     <a href="tel:05054641004" class="primary"><span class="icon">&#128222;</span><span>메인쿤 입양문의</span><span class="en">0505-464-1004</span></a>
   </div>
-  <script src="../../js/main.js"></script>
+  <script src="../../js/main.js?v={asset_version}"></script>
 </body>
 </html>"""
 
@@ -345,7 +365,13 @@ for r in regions:
         f'              <li><a href="{o["slug"]}.html">{o["keyword"]}</a></li>'
         for o in regions if o["slug"] != r["slug"]
     )
-    html = template.format(gallery_html=gallery_html, related_html=related_html, **r)
+    html = template.format(
+        gallery_html=gallery_html,
+        related_html=related_html,
+        asset_version=ASSET_VERSION,
+        regional_dropdown_css=REGIONAL_DROPDOWN_INLINE_CSS,
+        **r,
+    )
     path = os.path.join(out_dir, f"{r['slug']}.html")
     with open(path, "w", encoding="utf-8") as f:
         f.write(html)
