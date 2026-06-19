@@ -23,6 +23,40 @@
     link.addEventListener('click', closeMenu);
   });
 
+  // Header nav dropdown
+  var navDropdowns = document.querySelectorAll('.nav-has-dropdown');
+
+  function closeAllNavDropdowns() {
+    navDropdowns.forEach(function (item) {
+      item.classList.remove('open');
+      var btn = item.querySelector('.nav-dropdown-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  navDropdowns.forEach(function (item) {
+    var toggle = item.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = item.classList.contains('open');
+      closeAllNavDropdowns();
+      if (!isOpen) {
+        item.classList.add('open');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  document.addEventListener('click', function () {
+    closeAllNavDropdowns();
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeAllNavDropdowns();
+  });
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(
@@ -112,5 +146,15 @@
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') showPrev();
     if (e.key === 'ArrowRight') showNext();
+  });
+
+  // Footer dropdown: one open at a time
+  document.querySelectorAll('.footer-dropdown').forEach(function (detail) {
+    detail.addEventListener('toggle', function () {
+      if (!detail.open) return;
+      document.querySelectorAll('.footer-dropdown').forEach(function (other) {
+        if (other !== detail) other.open = false;
+      });
+    });
   });
 })();
