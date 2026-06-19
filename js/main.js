@@ -157,4 +157,14 @@
       });
     });
   });
+
+  // Regional subpage: other regions dropdown (click to expand, scroll, navigate)
+  document.querySelectorAll('.regional-links-dropdown').forEach(function (detail) {
+    detail.addEventListener('toggle', function () {
+      if (!detail.open) return;
+      document.querySelectorAll('.regional-links-dropdown').forEach(function (other) {
+        if (other !== detail) other.open = false;
+      });
+    });
+  });
 })();

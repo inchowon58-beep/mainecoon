@@ -314,9 +314,15 @@ template = """<!DOCTYPE html>
     </section>
 
     <section class="regional-links">
-      <h3>다른 지역 메인쿤분양</h3>
-      <div class="related-grid">
+      <div class="container">
+        <details class="regional-links-dropdown">
+          <summary>다른 지역 메인쿤분양</summary>
+          <div class="regional-links-panel">
+            <ul class="regional-links-list">
 {related_html}
+            </ul>
+          </div>
+        </details>
       </div>
     </section>
   </main>
@@ -336,7 +342,7 @@ for r in regions:
         for img in r["gallery"]
     )
     related_html = "\n".join(
-        f'        <a href="{o["slug"]}.html">{o["keyword"]}</a>'
+        f'              <li><a href="{o["slug"]}.html">{o["keyword"]}</a></li>'
         for o in regions if o["slug"] != r["slug"]
     )
     html = template.format(gallery_html=gallery_html, related_html=related_html, **r)
