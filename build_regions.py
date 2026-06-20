@@ -238,15 +238,15 @@ for _i, _spec in enumerate(EXTRA_REGION_SPECS):
 out_dir = os.path.join(BASE, "pages", "regions")
 os.makedirs(out_dir, exist_ok=True)
 
-ASSET_VERSION = "20260619c"
+ASSET_VERSION = "20260620a"
 
 REGIONAL_INLINE_CSS = """
   <style>
     .regional-video{padding:48px 0 56px;background:linear-gradient(180deg,#faf9f6 0%,#fff 100%);border-bottom:1px solid #eee}
-    .regional-video-card{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center}
+    .regional-video-card{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:start}
     .regional-video-copy .section-desc{max-width:none;margin-top:12px}
-    .regional-video-player{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.12);background:#111}
-    .regional-video-player video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#111}
+    .regional-video-player{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.12);background:#111;display:flex;justify-content:center;align-items:center}
+    .regional-video-player video{display:block;width:100%;height:auto;max-height:min(72vh,720px);object-fit:contain;background:#111}
     .regional-links-dropdown{max-width:520px;margin:0 auto;border:1px solid #e0e0e0;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.06)}
     .regional-links-dropdown summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-size:1.15rem;font-weight:500;color:#1a1a1a;user-select:none}
     .regional-links-dropdown summary::-webkit-details-marker{display:none}
