@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 import os
+import re
+
+from regions_extra import EXTRA_REGION_SPECS, make_region
+
+BASE = os.path.dirname(os.path.abspath(__file__))
 
 regions = [
     {
@@ -224,13 +229,24 @@ regions = [
     },
 ]
 
-out_dir = os.path.join(os.path.dirname(__file__), "pages", "regions")
+_existing = {r["slug"] for r in regions}
+for _i, _spec in enumerate(EXTRA_REGION_SPECS):
+    if _spec[0] not in _existing:
+        regions.append(make_region(*_spec, preset_idx=len(regions) + _i))
+        _existing.add(_spec[0])
+
+out_dir = os.path.join(BASE, "pages", "regions")
 os.makedirs(out_dir, exist_ok=True)
 
-ASSET_VERSION = "20260619b"
+ASSET_VERSION = "20260619c"
 
-REGIONAL_DROPDOWN_INLINE_CSS = """
+REGIONAL_INLINE_CSS = """
   <style>
+    .regional-video{padding:48px 0 56px;background:linear-gradient(180deg,#faf9f6 0%,#fff 100%);border-bottom:1px solid #eee}
+    .regional-video-card{max-width:980px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;gap:36px;align-items:center}
+    .regional-video-copy .section-desc{max-width:none;margin-top:12px}
+    .regional-video-player{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.12);background:#111}
+    .regional-video-player video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#111}
     .regional-links-dropdown{max-width:520px;margin:0 auto;border:1px solid #e0e0e0;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.06)}
     .regional-links-dropdown summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-size:1.15rem;font-weight:500;color:#1a1a1a;user-select:none}
     .regional-links-dropdown summary::-webkit-details-marker{display:none}
@@ -244,6 +260,7 @@ REGIONAL_DROPDOWN_INLINE_CSS = """
     .regional-links-list a:hover{color:#c9a84c;background:rgba(201,168,76,.06)}
     .regional-links-list li{border-bottom:1px solid #f0f0f0}
     .regional-links-list li:last-child{border-bottom:none}
+    @media (max-width:768px){.regional-video-card{grid-template-columns:1fr;gap:24px}}
   </style>"""
 
 template = """<!DOCTYPE html>
@@ -262,7 +279,7 @@ template = """<!DOCTYPE html>
   <meta property="og:image" content="https://www.cattery.co.kr/images/{hero}">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@400;500;600&family=Noto+Sans+KR:wght@400;500&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css?v={asset_version}">
-{regional_dropdown_css}
+{regional_inline_css}
   <script type="application/ld+json">
   {{"@context":"https://schema.org","@type":"LocalBusiness","name":"{keyword} - 메인쿤분양 전문 캐터리","description":"{area} {name} 지역 프리미엄 메인쿤분양","url":"https://www.cattery.co.kr/pages/regions/{slug}.html","telephone":"0505-464-1004","areaServed":"{area}","image":"https://www.cattery.co.kr/images/{hero}","priceRange":"$$$$"}}
   </script>
@@ -289,6 +306,24 @@ template = """<!DOCTYPE html>
         <h1>{keyword}</h1>
         <p class="regional-desc">{intro}</p>
         <div style="margin-top:32px;"><a href="tel:05054641004" class="btn btn-gold">{name} 입양문의</a></div>
+      </div>
+    </section>
+
+    <section class="regional-video reveal" id="adoption-video">
+      <div class="container">
+        <div class="regional-video-card">
+          <div class="regional-video-copy">
+            <p class="section-label">Adoption Stories</p>
+            <h2 class="section-title">지난 6개월간 <em>입양된 아이들</em></h2>
+            <p class="section-desc">메인쿤분양 전문 캐터리를 통해 새 가족을 만난 메인쿤들의 모습입니다. {name} 지역에서도 동일한 품질의 분양 상담을 받으실 수 있습니다.</p>
+          </div>
+          <div class="regional-video-player">
+            <video controls playsinline preload="metadata" poster="../../images/{hero}" aria-label="지난 6개월간 캐터리 입양 메인쿤 동영상">
+              <source src="../../videos/mainecoonplay.mp4" type="video/mp4">
+              브라우저가 동영상 재생을 지원하지 않습니다.
+            </video>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -369,7 +404,7 @@ for r in regions:
         gallery_html=gallery_html,
         related_html=related_html,
         asset_version=ASSET_VERSION,
-        regional_dropdown_css=REGIONAL_DROPDOWN_INLINE_CSS,
+        regional_inline_css=REGIONAL_INLINE_CSS,
         **r,
     )
     path = os.path.join(out_dir, f"{r['slug']}.html")
@@ -378,3 +413,76 @@ for r in regions:
     print(f"Created {r['slug']}.html")
 
 print(f"Done: {len(regions)} pages")
+
+
+def _replace_block(text, start_marker, end_marker, new_content):
+    pattern = re.escape(start_marker) + r".*?" + re.escape(end_marker)
+    replacement = start_marker + "\n" + new_content + "\n" + end_marker
+    if not re.search(pattern, text, flags=re.DOTALL):
+        raise RuntimeError(f"Marker not found: {start_marker}")
+    return re.sub(pattern, replacement, text, count=1, flags=re.DOTALL)
+
+
+def update_index_nav(region_list):
+    index_path = os.path.join(BASE, "index.html")
+    with open(index_path, encoding="utf-8") as f:
+        html = f.read()
+
+    desktop = "\n".join(
+        f'              <a href="pages/regions/{r["slug"]}.html">{r["keyword"]}</a>'
+        for r in region_list
+    )
+    mobile = "\n".join(
+        f'        <a href="pages/regions/{r["slug"]}.html">{r["keyword"]}</a>'
+        for r in region_list
+    )
+    footer = "\n".join(
+        f'                <li><a href="pages/regions/{r["slug"]}.html">{r["keyword"]}</a></li>'
+        for r in region_list
+    )
+
+    html = _replace_block(html, "<!-- REGIONS_NAV_DESKTOP -->", "<!-- /REGIONS_NAV_DESKTOP -->", desktop)
+    html = _replace_block(html, "<!-- REGIONS_NAV_MOBILE -->", "<!-- /REGIONS_NAV_MOBILE -->", mobile)
+    html = _replace_block(html, "<!-- REGIONS_NAV_FOOTER -->", "<!-- /REGIONS_NAV_FOOTER -->", footer)
+
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"Updated index.html nav ({len(region_list)} regions)")
+
+
+def update_sitemap(region_list):
+    sitemap_path = os.path.join(BASE, "sitemap.xml")
+    static_urls = [
+        ("https://www.cattery.co.kr/", "weekly", "1.0"),
+        ("https://www.cattery.co.kr/pages/maine-coon-adoption.html", "monthly", "0.9"),
+        ("https://www.cattery.co.kr/pages/maine-coon-types.html", "monthly", "0.8"),
+        ("https://www.cattery.co.kr/pages/maine-coon-size.html", "monthly", "0.8"),
+        ("https://www.cattery.co.kr/pages/maine-coon-personality.html", "monthly", "0.8"),
+        ("https://www.cattery.co.kr/pages/adult-cat.html", "monthly", "0.8"),
+        ("https://www.cattery.co.kr/pages/shedding-care.html", "monthly", "0.8"),
+    ]
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for loc, freq, pri in static_urls:
+        lines.extend([
+            "  <url>",
+            f"    <loc>{loc}</loc>",
+            f"    <changefreq>{freq}</changefreq>",
+            f"    <priority>{pri}</priority>",
+            "  </url>",
+        ])
+    for r in region_list:
+        lines.extend([
+            "  <url>",
+            f"    <loc>https://www.cattery.co.kr/pages/regions/{r['slug']}.html</loc>",
+            "    <changefreq>monthly</changefreq>",
+            "    <priority>0.85</priority>",
+            "  </url>",
+        ])
+    lines.append("</urlset>")
+    with open(sitemap_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    print(f"Updated sitemap.xml ({len(region_list)} region URLs)")
+
+
+update_index_nav(regions)
+update_sitemap(regions)
