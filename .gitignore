@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# Next.js app archived — site deploys as static HTML only
+# See _archive/nextjs_app/
