@@ -71,6 +71,11 @@
   );
   reveals.forEach(function (el) { observer.observe(el); });
 
+  // Fallback: ensure content is visible if observer fails
+  setTimeout(function () {
+    reveals.forEach(function (el) { el.classList.add('visible'); });
+  }, 2000);
+
   // Header scroll
   const header = document.querySelector('.header');
   window.addEventListener('scroll', function () {
