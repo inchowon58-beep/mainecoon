@@ -6,5 +6,935 @@
   "installCommand": null,
   "outputDirectory": ".",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/간석메인쿤분양",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/간석메인쿤분양/",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/강남메인쿤분양",
+      "destination": "/pages/regions/gangnam.html"
+    },
+    {
+      "source": "/강남메인쿤분양/",
+      "destination": "/pages/regions/gangnam.html"
+    },
+    {
+      "source": "/강동메인쿤분양",
+      "destination": "/pages/regions/gangdong.html"
+    },
+    {
+      "source": "/강동메인쿤분양/",
+      "destination": "/pages/regions/gangdong.html"
+    },
+    {
+      "source": "/강서구메인쿤분양",
+      "destination": "/pages/regions/magok.html"
+    },
+    {
+      "source": "/강서구메인쿤분양/",
+      "destination": "/pages/regions/magok.html"
+    },
+    {
+      "source": "/강화도메인쿤분양",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/강화도메인쿤분양/",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/경산메인쿤분양",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/경산메인쿤분양/",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/과천메인쿤분양",
+      "destination": "/pages/regions/gwacheon.html"
+    },
+    {
+      "source": "/과천메인쿤분양/",
+      "destination": "/pages/regions/gwacheon.html"
+    },
+    {
+      "source": "/관악구메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/관악구메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/광명메인쿤분양",
+      "destination": "/pages/regions/gwangmyeong.html"
+    },
+    {
+      "source": "/광명메인쿤분양/",
+      "destination": "/pages/regions/gwangmyeong.html"
+    },
+    {
+      "source": "/광주메인쿤분양",
+      "destination": "/pages/regions/gwangju.html"
+    },
+    {
+      "source": "/광주메인쿤분양/",
+      "destination": "/pages/regions/gwangju.html"
+    },
+    {
+      "source": "/광진구메인쿤분양",
+      "destination": "/pages/regions/gangdong.html"
+    },
+    {
+      "source": "/광진구메인쿤분양/",
+      "destination": "/pages/regions/gangdong.html"
+    },
+    {
+      "source": "/구리메인쿤분양",
+      "destination": "/pages/regions/guri.html"
+    },
+    {
+      "source": "/구리메인쿤분양/",
+      "destination": "/pages/regions/guri.html"
+    },
+    {
+      "source": "/구미메인쿤분양",
+      "destination": "/pages/regions/gumi.html"
+    },
+    {
+      "source": "/구미메인쿤분양/",
+      "destination": "/pages/regions/gumi.html"
+    },
+    {
+      "source": "/군산메인쿤분양",
+      "destination": "/pages/regions/gunsan.html"
+    },
+    {
+      "source": "/군산메인쿤분양/",
+      "destination": "/pages/regions/gunsan.html"
+    },
+    {
+      "source": "/군포메인쿤분양",
+      "destination": "/pages/regions/gunpo.html"
+    },
+    {
+      "source": "/군포메인쿤분양/",
+      "destination": "/pages/regions/gunpo.html"
+    },
+    {
+      "source": "/금천구메인쿤분양",
+      "destination": "/pages/regions/gwangmyeong.html"
+    },
+    {
+      "source": "/금천구메인쿤분양/",
+      "destination": "/pages/regions/gwangmyeong.html"
+    },
+    {
+      "source": "/김포메인쿤분양",
+      "destination": "/pages/regions/gimpo.html"
+    },
+    {
+      "source": "/김포메인쿤분양/",
+      "destination": "/pages/regions/gimpo.html"
+    },
+    {
+      "source": "/김해메인쿤분양",
+      "destination": "/pages/regions/gimhae.html"
+    },
+    {
+      "source": "/김해메인쿤분양/",
+      "destination": "/pages/regions/gimhae.html"
+    },
+    {
+      "source": "/남양주메인쿤분양",
+      "destination": "/pages/regions/namyangju.html"
+    },
+    {
+      "source": "/남양주메인쿤분양/",
+      "destination": "/pages/regions/namyangju.html"
+    },
+    {
+      "source": "/노원구메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/노원구메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/단원구메인쿤분양",
+      "destination": "/pages/regions/ansan.html"
+    },
+    {
+      "source": "/단원구메인쿤분양/",
+      "destination": "/pages/regions/ansan.html"
+    },
+    {
+      "source": "/달서구메인쿤분양",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/달서구메인쿤분양/",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/당진메인쿤분양",
+      "destination": "/pages/regions/dangjin.html"
+    },
+    {
+      "source": "/당진메인쿤분양/",
+      "destination": "/pages/regions/dangjin.html"
+    },
+    {
+      "source": "/대구메인쿤분양",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/대구메인쿤분양/",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/대전메인쿤분양",
+      "destination": "/pages/regions/daejeon.html"
+    },
+    {
+      "source": "/대전메인쿤분양/",
+      "destination": "/pages/regions/daejeon.html"
+    },
+    {
+      "source": "/도봉구메인쿤분양",
+      "destination": "/pages/regions/uijeongbu.html"
+    },
+    {
+      "source": "/도봉구메인쿤분양/",
+      "destination": "/pages/regions/uijeongbu.html"
+    },
+    {
+      "source": "/동두천메인쿤분양",
+      "destination": "/pages/regions/dongducheon.html"
+    },
+    {
+      "source": "/동두천메인쿤분양/",
+      "destination": "/pages/regions/dongducheon.html"
+    },
+    {
+      "source": "/동작구메인쿤분양",
+      "destination": "/pages/regions/seocho.html"
+    },
+    {
+      "source": "/동작구메인쿤분양/",
+      "destination": "/pages/regions/seocho.html"
+    },
+    {
+      "source": "/동탄메인쿤분양",
+      "destination": "/pages/regions/dongtan.html"
+    },
+    {
+      "source": "/동탄메인쿤분양/",
+      "destination": "/pages/regions/dongtan.html"
+    },
+    {
+      "source": "/동해메인쿤분양",
+      "destination": "/pages/regions/donghae.html"
+    },
+    {
+      "source": "/동해메인쿤분양/",
+      "destination": "/pages/regions/donghae.html"
+    },
+    {
+      "source": "/마곡메인쿤분양",
+      "destination": "/pages/regions/magok.html"
+    },
+    {
+      "source": "/마곡메인쿤분양/",
+      "destination": "/pages/regions/magok.html"
+    },
+    {
+      "source": "/마산메인쿤분양",
+      "destination": "/pages/regions/masan.html"
+    },
+    {
+      "source": "/마산메인쿤분양/",
+      "destination": "/pages/regions/masan.html"
+    },
+    {
+      "source": "/메인쿤고양이성묘",
+      "destination": "/pages/adult-cat.html"
+    },
+    {
+      "source": "/메인쿤고양이성묘/",
+      "destination": "/pages/adult-cat.html"
+    },
+    {
+      "source": "/메인쿤고양이종류",
+      "destination": "/pages/maine-coon-types.html"
+    },
+    {
+      "source": "/메인쿤고양이종류/",
+      "destination": "/pages/maine-coon-types.html"
+    },
+    {
+      "source": "/메인쿤몸무게",
+      "destination": "/pages/maine-coon-size.html"
+    },
+    {
+      "source": "/메인쿤몸무게/",
+      "destination": "/pages/maine-coon-size.html"
+    },
+    {
+      "source": "/메인쿤분양가",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤분양가/",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤분양가격",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤분양가격/",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤성격",
+      "destination": "/pages/maine-coon-personality.html"
+    },
+    {
+      "source": "/메인쿤성격/",
+      "destination": "/pages/maine-coon-personality.html"
+    },
+    {
+      "source": "/메인쿤수명",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤수명/",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤유전병",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤유전병/",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤입양",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤입양/",
+      "destination": "/pages/maine-coon-adoption.html"
+    },
+    {
+      "source": "/메인쿤크기",
+      "destination": "/pages/maine-coon-size.html"
+    },
+    {
+      "source": "/메인쿤크기/",
+      "destination": "/pages/maine-coon-size.html"
+    },
+    {
+      "source": "/메인쿤털빠짐",
+      "destination": "/pages/shedding-care.html"
+    },
+    {
+      "source": "/메인쿤털빠짐/",
+      "destination": "/pages/shedding-care.html"
+    },
+    {
+      "source": "/메인쿤특징",
+      "destination": "/pages/maine-coon-personality.html"
+    },
+    {
+      "source": "/메인쿤특징/",
+      "destination": "/pages/maine-coon-personality.html"
+    },
+    {
+      "source": "/목동메인쿤분양",
+      "destination": "/pages/regions/yeongdeungpo.html"
+    },
+    {
+      "source": "/목동메인쿤분양/",
+      "destination": "/pages/regions/yeongdeungpo.html"
+    },
+    {
+      "source": "/목포메인쿤분양",
+      "destination": "/pages/regions/mokpo.html"
+    },
+    {
+      "source": "/목포메인쿤분양/",
+      "destination": "/pages/regions/mokpo.html"
+    },
+    {
+      "source": "/미사메인쿤분양",
+      "destination": "/pages/regions/misa.html"
+    },
+    {
+      "source": "/미사메인쿤분양/",
+      "destination": "/pages/regions/misa.html"
+    },
+    {
+      "source": "/미추홀구메인쿤분양",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/미추홀구메인쿤분양/",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/밀양메인쿤분양",
+      "destination": "/pages/regions/miryang.html"
+    },
+    {
+      "source": "/밀양메인쿤분양/",
+      "destination": "/pages/regions/miryang.html"
+    },
+    {
+      "source": "/별내메인쿤분양",
+      "destination": "/pages/regions/byulnae.html"
+    },
+    {
+      "source": "/별내메인쿤분양/",
+      "destination": "/pages/regions/byulnae.html"
+    },
+    {
+      "source": "/부산메인쿤분양",
+      "destination": "/pages/regions/busan.html"
+    },
+    {
+      "source": "/부산메인쿤분양/",
+      "destination": "/pages/regions/busan.html"
+    },
+    {
+      "source": "/부천메인쿤분양",
+      "destination": "/pages/regions/bucheon.html"
+    },
+    {
+      "source": "/부천메인쿤분양/",
+      "destination": "/pages/regions/bucheon.html"
+    },
+    {
+      "source": "/부평메인쿤분양",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/부평메인쿤분양/",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/분당메인쿤분양",
+      "destination": "/pages/regions/bundang.html"
+    },
+    {
+      "source": "/분당메인쿤분양/",
+      "destination": "/pages/regions/bundang.html"
+    },
+    {
+      "source": "/산본메인쿤분양",
+      "destination": "/pages/regions/sanbon.html"
+    },
+    {
+      "source": "/산본메인쿤분양/",
+      "destination": "/pages/regions/sanbon.html"
+    },
+    {
+      "source": "/서산메인쿤분양",
+      "destination": "/pages/regions/seosan.html"
+    },
+    {
+      "source": "/서산메인쿤분양/",
+      "destination": "/pages/regions/seosan.html"
+    },
+    {
+      "source": "/서울메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/서울메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/서초구메인쿤분양",
+      "destination": "/pages/regions/seocho.html"
+    },
+    {
+      "source": "/서초구메인쿤분양/",
+      "destination": "/pages/regions/seocho.html"
+    },
+    {
+      "source": "/서초메인쿤분양",
+      "destination": "/pages/regions/seocho.html"
+    },
+    {
+      "source": "/서초메인쿤분양/",
+      "destination": "/pages/regions/seocho.html"
+    },
+    {
+      "source": "/성남메인쿤분양",
+      "destination": "/pages/regions/seongnam.html"
+    },
+    {
+      "source": "/성남메인쿤분양/",
+      "destination": "/pages/regions/seongnam.html"
+    },
+    {
+      "source": "/성동구메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/성동구메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/세종메인쿤분양",
+      "destination": "/pages/regions/jochiwon.html"
+    },
+    {
+      "source": "/세종메인쿤분양/",
+      "destination": "/pages/regions/jochiwon.html"
+    },
+    {
+      "source": "/송도메인쿤분양",
+      "destination": "/pages/regions/songdo.html"
+    },
+    {
+      "source": "/송도메인쿤분양/",
+      "destination": "/pages/regions/songdo.html"
+    },
+    {
+      "source": "/송탄메인쿤분양",
+      "destination": "/pages/regions/songtan.html"
+    },
+    {
+      "source": "/송탄메인쿤분양/",
+      "destination": "/pages/regions/songtan.html"
+    },
+    {
+      "source": "/송파메인쿤분양",
+      "destination": "/pages/regions/songpa.html"
+    },
+    {
+      "source": "/송파메인쿤분양/",
+      "destination": "/pages/regions/songpa.html"
+    },
+    {
+      "source": "/수원메인쿤분양",
+      "destination": "/pages/regions/suwon.html"
+    },
+    {
+      "source": "/수원메인쿤분양/",
+      "destination": "/pages/regions/suwon.html"
+    },
+    {
+      "source": "/순천메인쿤분양",
+      "destination": "/pages/regions/mokpo.html"
+    },
+    {
+      "source": "/순천메인쿤분양/",
+      "destination": "/pages/regions/mokpo.html"
+    },
+    {
+      "source": "/시흥메인쿤분양",
+      "destination": "/pages/regions/siheung.html"
+    },
+    {
+      "source": "/시흥메인쿤분양/",
+      "destination": "/pages/regions/siheung.html"
+    },
+    {
+      "source": "/신림메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/신림메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/안산메인쿤분양",
+      "destination": "/pages/regions/ansan.html"
+    },
+    {
+      "source": "/안산메인쿤분양/",
+      "destination": "/pages/regions/ansan.html"
+    },
+    {
+      "source": "/안성메인쿤분양",
+      "destination": "/pages/regions/suwon.html"
+    },
+    {
+      "source": "/안성메인쿤분양/",
+      "destination": "/pages/regions/suwon.html"
+    },
+    {
+      "source": "/안양메인쿤분양",
+      "destination": "/pages/regions/anyang.html"
+    },
+    {
+      "source": "/안양메인쿤분양/",
+      "destination": "/pages/regions/anyang.html"
+    },
+    {
+      "source": "/양주메인쿤분양",
+      "destination": "/pages/regions/uijeongbu.html"
+    },
+    {
+      "source": "/양주메인쿤분양/",
+      "destination": "/pages/regions/uijeongbu.html"
+    },
+    {
+      "source": "/양평메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/양평메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/언양메인쿤분양",
+      "destination": "/pages/regions/eonyang.html"
+    },
+    {
+      "source": "/언양메인쿤분양/",
+      "destination": "/pages/regions/eonyang.html"
+    },
+    {
+      "source": "/여주메인쿤분양",
+      "destination": "/pages/regions/yeoju.html"
+    },
+    {
+      "source": "/여주메인쿤분양/",
+      "destination": "/pages/regions/yeoju.html"
+    },
+    {
+      "source": "/영등포메인쿤분양",
+      "destination": "/pages/regions/yeongdeungpo.html"
+    },
+    {
+      "source": "/영등포메인쿤분양/",
+      "destination": "/pages/regions/yeongdeungpo.html"
+    },
+    {
+      "source": "/영종도메인쿤분양",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/영종도메인쿤분양/",
+      "destination": "/pages/regions/incheon.html"
+    },
+    {
+      "source": "/오산메인쿤분양",
+      "destination": "/pages/regions/osan.html"
+    },
+    {
+      "source": "/오산메인쿤분양/",
+      "destination": "/pages/regions/osan.html"
+    },
+    {
+      "source": "/온양메인쿤분양",
+      "destination": "/pages/regions/onyang.html"
+    },
+    {
+      "source": "/온양메인쿤분양/",
+      "destination": "/pages/regions/onyang.html"
+    },
+    {
+      "source": "/용산메인쿤분양",
+      "destination": "/pages/regions/yongsan.html"
+    },
+    {
+      "source": "/용산메인쿤분양/",
+      "destination": "/pages/regions/yongsan.html"
+    },
+    {
+      "source": "/용인메인쿤분양",
+      "destination": "/pages/regions/yongin.html"
+    },
+    {
+      "source": "/용인메인쿤분양/",
+      "destination": "/pages/regions/yongin.html"
+    },
+    {
+      "source": "/울산메인쿤분양",
+      "destination": "/pages/regions/ulsan.html"
+    },
+    {
+      "source": "/울산메인쿤분양/",
+      "destination": "/pages/regions/ulsan.html"
+    },
+    {
+      "source": "/원주메인쿤분양",
+      "destination": "/pages/regions/wonju.html"
+    },
+    {
+      "source": "/원주메인쿤분양/",
+      "destination": "/pages/regions/wonju.html"
+    },
+    {
+      "source": "/은평구메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/은평구메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/의왕메인쿤분양",
+      "destination": "/pages/regions/uiwang.html"
+    },
+    {
+      "source": "/의왕메인쿤분양/",
+      "destination": "/pages/regions/uiwang.html"
+    },
+    {
+      "source": "/의정부메인쿤분양",
+      "destination": "/pages/regions/uijeongbu.html"
+    },
+    {
+      "source": "/의정부메인쿤분양/",
+      "destination": "/pages/regions/uijeongbu.html"
+    },
+    {
+      "source": "/이천메인쿤분양",
+      "destination": "/pages/regions/icheon.html"
+    },
+    {
+      "source": "/이천메인쿤분양/",
+      "destination": "/pages/regions/icheon.html"
+    },
+    {
+      "source": "/이태원메인쿤분양",
+      "destination": "/pages/regions/itaewon.html"
+    },
+    {
+      "source": "/이태원메인쿤분양/",
+      "destination": "/pages/regions/itaewon.html"
+    },
+    {
+      "source": "/익산메인쿤분양",
+      "destination": "/pages/regions/jeonju.html"
+    },
+    {
+      "source": "/익산메인쿤분양/",
+      "destination": "/pages/regions/jeonju.html"
+    },
+    {
+      "source": "/인천메인쿤분양",
+      "destination": "/pages/regions/인천메인쿤분양.html"
+    },
+    {
+      "source": "/인천메인쿤분양/",
+      "destination": "/pages/regions/인천메인쿤분양.html"
+    },
+    {
+      "source": "/일산메인쿤분양",
+      "destination": "/pages/regions/ilsan.html"
+    },
+    {
+      "source": "/일산메인쿤분양/",
+      "destination": "/pages/regions/ilsan.html"
+    },
+    {
+      "source": "/잠실메인쿤분양",
+      "destination": "/pages/regions/jamsil.html"
+    },
+    {
+      "source": "/잠실메인쿤분양/",
+      "destination": "/pages/regions/jamsil.html"
+    },
+    {
+      "source": "/전주메인쿤분양",
+      "destination": "/pages/regions/jeonju.html"
+    },
+    {
+      "source": "/전주메인쿤분양/",
+      "destination": "/pages/regions/jeonju.html"
+    },
+    {
+      "source": "/제주도메인쿤분양",
+      "destination": "/pages/regions/jeju.html"
+    },
+    {
+      "source": "/제주도메인쿤분양/",
+      "destination": "/pages/regions/jeju.html"
+    },
+    {
+      "source": "/조치원메인쿤분양",
+      "destination": "/pages/regions/jochiwon.html"
+    },
+    {
+      "source": "/조치원메인쿤분양/",
+      "destination": "/pages/regions/jochiwon.html"
+    },
+    {
+      "source": "/종로메인쿤분양",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/종로메인쿤분양/",
+      "destination": "/pages/regions/seoul.html"
+    },
+    {
+      "source": "/중동메인쿤분양",
+      "destination": "/pages/regions/bucheon.html"
+    },
+    {
+      "source": "/중동메인쿤분양/",
+      "destination": "/pages/regions/bucheon.html"
+    },
+    {
+      "source": "/진주메인쿤분양",
+      "destination": "/pages/regions/jinju.html"
+    },
+    {
+      "source": "/진주메인쿤분양/",
+      "destination": "/pages/regions/jinju.html"
+    },
+    {
+      "source": "/진해메인쿤분양",
+      "destination": "/pages/regions/jinhae.html"
+    },
+    {
+      "source": "/진해메인쿤분양/",
+      "destination": "/pages/regions/jinhae.html"
+    },
+    {
+      "source": "/청라메인쿤분양",
+      "destination": "/pages/regions/cheongna.html"
+    },
+    {
+      "source": "/청라메인쿤분양/",
+      "destination": "/pages/regions/cheongna.html"
+    },
+    {
+      "source": "/청주메인쿤분양",
+      "destination": "/pages/regions/cheongju.html"
+    },
+    {
+      "source": "/청주메인쿤분양/",
+      "destination": "/pages/regions/cheongju.html"
+    },
+    {
+      "source": "/춘천메인쿤분양",
+      "destination": "/pages/regions/chuncheon.html"
+    },
+    {
+      "source": "/춘천메인쿤분양/",
+      "destination": "/pages/regions/chuncheon.html"
+    },
+    {
+      "source": "/충주메인쿤분양",
+      "destination": "/pages/regions/chungju.html"
+    },
+    {
+      "source": "/충주메인쿤분양/",
+      "destination": "/pages/regions/chungju.html"
+    },
+    {
+      "source": "/태백메인쿤분양",
+      "destination": "/pages/regions/taebaek.html"
+    },
+    {
+      "source": "/태백메인쿤분양/",
+      "destination": "/pages/regions/taebaek.html"
+    },
+    {
+      "source": "/태안메인쿤분양",
+      "destination": "/pages/regions/taean.html"
+    },
+    {
+      "source": "/태안메인쿤분양/",
+      "destination": "/pages/regions/taean.html"
+    },
+    {
+      "source": "/털빠짐",
+      "destination": "/pages/shedding-care.html"
+    },
+    {
+      "source": "/털빠짐/",
+      "destination": "/pages/shedding-care.html"
+    },
+    {
+      "source": "/파주메인쿤분양",
+      "destination": "/pages/regions/gimpo.html"
+    },
+    {
+      "source": "/파주메인쿤분양/",
+      "destination": "/pages/regions/gimpo.html"
+    },
+    {
+      "source": "/평택메인쿤분양",
+      "destination": "/pages/regions/pyeongtaek.html"
+    },
+    {
+      "source": "/평택메인쿤분양/",
+      "destination": "/pages/regions/pyeongtaek.html"
+    },
+    {
+      "source": "/포항메인쿤분양",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/포항메인쿤분양/",
+      "destination": "/pages/regions/daegu.html"
+    },
+    {
+      "source": "/하남메인쿤분양",
+      "destination": "/pages/regions/hanam.html"
+    },
+    {
+      "source": "/하남메인쿤분양/",
+      "destination": "/pages/regions/hanam.html"
+    },
+    {
+      "source": "/해운대메인쿤분양",
+      "destination": "/pages/regions/busan.html"
+    },
+    {
+      "source": "/해운대메인쿤분양/",
+      "destination": "/pages/regions/busan.html"
+    },
+    {
+      "source": "/홍성메인쿤분양",
+      "destination": "/pages/regions/hongseong.html"
+    },
+    {
+      "source": "/홍성메인쿤분양/",
+      "destination": "/pages/regions/hongseong.html"
+    },
+    {
+      "source": "/홍천메인쿤분양",
+      "destination": "/pages/regions/hongcheon.html"
+    },
+    {
+      "source": "/홍천메인쿤분양/",
+      "destination": "/pages/regions/hongcheon.html"
+    },
+    {
+      "source": "/화곡동메인쿤분양",
+      "destination": "/pages/regions/magok.html"
+    },
+    {
+      "source": "/화곡동메인쿤분양/",
+      "destination": "/pages/regions/magok.html"
+    },
+    {
+      "source": "/화성메인쿤분양",
+      "destination": "/pages/regions/hwaseong.html"
+    },
+    {
+      "source": "/화성메인쿤분양/",
+      "destination": "/pages/regions/hwaseong.html"
+    }
+  ]
 }
