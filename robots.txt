@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cattery.co.kr/sitemap.xml
+Sitemap: https://mainecoon.cattery.co.kr/sitemap.xml
